@@ -2,13 +2,13 @@
 
 from tkinter import *
 
-win = Tk()  # This is to create a basic window
-win.geometry("312x324")  # this is for the size of the window
-win.resizable(0, 0)  # this is to prevent from resizing the window
-win.title("Calculator")
+root = Tk()  # This is to create a basic window
+root.geometry("312x324")  # this is for the size of the window
+root.resizable(0, 0)  # this is to prevent from resizing the window
+root.title("Calculator")
 
 
-###################Starting with functions ####################
+# Starting with functions #
 # 'btn_click' function :
 # This Function continuously updates the
 # input field whenever you enters a number
@@ -46,7 +46,7 @@ input_text = StringVar()
 
 # Let us creating a frame for the input field
 
-input_frame = Frame(win, width=312, height=50, bd=0, highlightbackground="black", highlightcolor="black",
+input_frame = Frame(root, width=312, height=50, bd=0, highlightbackground="black", highlightcolor="black",
                     highlightthickness=2)
 
 input_frame.pack(side=TOP)
@@ -62,7 +62,7 @@ input_field.pack(ipady=10)  # 'ipady' is internal padding to increase the height
 
 # Let us creating another 'Frame' for the button below the 'input_frame'
 
-btns_frame = Frame(win, width=312, height=272.5, bg="grey")
+btns_frame = Frame(root, width=312, height=272.5, bg="grey")
 
 btns_frame.pack()
 
@@ -127,4 +127,6 @@ point = Button(btns_frame, text=".", fg="black", width=10, height=3, bd=0, bg="#
 equals = Button(btns_frame, text="=", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
                 command=lambda: bt_equal()).grid(row=4, column=3, padx=1, pady=1)
 
-win.mainloop()
+root.iconbitmap('E:\icon/calculator.ico')
+
+root.mainloop()
